@@ -74,6 +74,8 @@ const Header = () => {
                         <Navbar.Text className='ms-5'>
                             Signed in as: <a href="#login">{user?.displayName}</a>
                         </Navbar.Text>
+                        <div className='text-warning fw-bold'> Time <br />
+                            {new Date().toLocaleString() + ''}</div>
                     </Nav>
                 </Container>
             </Navbar>

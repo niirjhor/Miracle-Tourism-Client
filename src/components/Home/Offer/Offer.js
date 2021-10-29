@@ -18,7 +18,7 @@ const Offer = (props) => {
                         <h5 className="card-title">{description} <br /> <span className="text-secondary"> Duration:{duraion}</span></h5>
                         <div className="text-center my-4">
                             <Link to={`/orderplaced/${_id}`}>
-                                <button className='btn btn-warning' >Check details</button>   </Link></div>
+                                <button className='btn btn-warning' >Book Now</button>   </Link></div>
                     </Card.Body>
                 </Card>
             </Col>

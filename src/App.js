@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import OrdersPlaced from './components/OrdersPlaced/OrdersPlaced';
-import MyOrders from './components/MyOrders/MyOrders';
+
 import ManageAllOrders from './components/ManageAllOrders/ManageAllOrders';
 import AddNewService from './components/AddNewService/AddNewService';
 import Login from './components/Login/Login';
@@ -17,6 +17,7 @@ import NotFound from './components/Shared/NotFound/NotFound';
 import Header from './components/Shared/Header/Header/Header';
 import AuthProvider from './components/context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyOrders from './components/MyOrders/MyOrders/MyOrders';
 
 function App() {
   return (
