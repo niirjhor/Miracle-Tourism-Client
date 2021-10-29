@@ -12,7 +12,7 @@ const MainOffers = () => {
 
     return (
         <div>
-            <h2 className='text-info fw-bold py-3 my-4' ><span className='text-warning fw-bold'> Top </span>Tour Packages</h2>
+            <h2 className='text-info fw-bold py-3 my-4' id='offers' ><span className='text-warning fw-bold'> Top </span>Tour Packages</h2>
 
             <Row xs={1} md={3} className="g-4">
                 {

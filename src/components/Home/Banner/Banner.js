@@ -16,7 +16,7 @@ const Banner = () => {
 
                     </div>
                     <h2>Best Quality Service</h2>
-                    <button className='btn btn-primary Button'>See the Best Offer</button>
+                    <button href='#offer' className='btn btn-primary Button'>See the Best Offer</button>
                 </div>
                 <div className='col-lg-6 col-sm-1'>
                     <Carousel>
