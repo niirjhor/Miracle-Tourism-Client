@@ -36,8 +36,12 @@ const AddNewService = () => {
                 <input {...register("duraion", { required: true, maxLength: 100 })} placeholder="Duration" />
 
                 <br />
+                <input type='number' {...register("duraion", { required: true, maxLength: 100 })} placeholder="Package Price" />
 
-                <textarea {...register("description")} placeholder="Description" />
+                <br />
+
+
+                <textarea {...register("description", { required: true, maxLength: 100 })} placeholder="Description" />
                 <br />
 
                 <input type="number" {...register("bookingID")} placeholder="Booking ID" />  <br />

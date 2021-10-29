@@ -56,6 +56,7 @@ const MyOrders = () => {
                                                             <th>Package Name</th>
                                                             <th>Email</th>
                                                             <th>Phone Number</th>
+                                                            <th>Package Cost</th>
                                                             <th>Delete</th>
                                                             <th>Status</th>
                                                         </tr>
@@ -65,6 +66,7 @@ const MyOrders = () => {
                                                             <td>{order.tourName}</td>
                                                             <td>{order.email}</td>
                                                             <td>{order.phoneNumber}</td>
+                                                            <td>{order.price}</td>
                                                             <td>
                                                                 <button className='btn btn-warning' onClick={() => handleDelete(order._id)}>Cancel</button>
                                                             </td>

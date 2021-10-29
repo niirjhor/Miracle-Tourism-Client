@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Col, Table } from 'react-bootstrap';
 
 const ManageAllOrders = () => {
+
     //GET User Data
     const [orders, setOrders] = useState([]);
     useEffect(() => {
@@ -9,24 +10,6 @@ const ManageAllOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
-
-    //Load New Data
-
-    const [datas, setDatas] = useState([]);
-
-
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/packages')
-    //         .then(res => res.json())
-    //         .then(data => setDatas(data))
-    // }, [])
-
-    // const handleAddData = () => {
-    //     setDatas(data);
-    // }
-
-
-
 
 
     //handle Delete
@@ -45,22 +28,7 @@ const ManageAllOrders = () => {
                 }
             })
     }
-    //handle Addition
-    // const handleAdd = data => {
-    //     const url = `http://localhost:5000/bookingConfirmations/${id}`
-    //     fetch(url, {
-    //         method: "DELETE"
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             if (data.deletedCount) {
-    //                 alert('Are you sure to cancel the booking?')
-    //                 const remaining = orders.filter(order => order._id !== id);
-    //                 setOrders(remaining);
-    //             }
-    //         })
-    // }
+
 
     return (
         <div>
@@ -68,11 +36,13 @@ const ManageAllOrders = () => {
                 <thead>
                     <tr>
                         <th>Serial</th>
+
                         <th>Booked Package</th>
+                        <th>User Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
                         <th>Action</th>
-                        <th>Add Service</th>
+
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -81,14 +51,13 @@ const ManageAllOrders = () => {
                         <tr>
                             <td>{index + 1}</td>
                             <td>{order?.tourName}</td>
+                            <td>{order?.displayName}</td>
                             <td>{order?.email}</td>
                             <td>{order?.phoneNumber}</td>
                             <td>
                                 <button onClick={() => handleDelete(order._id)} className="btn bg-warning p-2">Delete</button>
                             </td>
-                            <td>
-                                <button className="btn bg-warning p-2">Add</button>
-                            </td>
+
                             <td>
                                 <button className="btn bg-warning p-2">Pending</button>
                             </td>

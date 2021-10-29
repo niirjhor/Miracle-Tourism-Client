@@ -51,7 +51,10 @@ const OrdersPlaced = () => {
 
                 <br />
 
-                <input {...register("tourName", { required: true })} value={bookings.tourName} />
+                {bookings.price && <input readOnly={true} {...register("price")} defaultValue={bookings.price} />}
+                <br />
+                {bookings.tourName &&
+                    <input readOnly={true} {...register("tourName", { required: true })} value={bookings.tourName} />}
 
                 <br />
                 <input type='text' {...register("Address", { required: true, maxLength: 50 })} placeholder="Full Address" />
