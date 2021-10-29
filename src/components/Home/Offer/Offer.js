@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import './Offer.css'
 
 const Offer = (props) => {
     const { tourName, duraion, offer, img, description } = props.offer;
@@ -10,11 +11,12 @@ const Offer = (props) => {
             <Col className='container'>
 
                 <Card className='card'>
-                    <Card.Img variant="top" className='doctor-img' src={img} />
-                    <Card.Body>
-                        <Card.Title>Test Name: {tourName}</Card.Title>
-                        <p className='text-info fw-bold'>Rate: {offer} Taka</p>
-                        <p>Result in: {description} days</p>
+                    <Card.Img variant="top" src={img} />
+                    <Card.Body className='cards'>
+                        <div className="clearfix mb-3"> <span className="float-start badge rounded-pill bg-danger">{tourName}</span> <span className="float-end fw-bold text-primary">{offer}</span> </div>
+                        <h5 className="card-title">{description} <br /> <span className="text-secondary"> Duration:{duraion}</span></h5>
+                        <div className="text-center my-4">
+                            <button className='btn btn-warning' >Check details</button> </div>
                     </Card.Body>
                 </Card>
             </Col>

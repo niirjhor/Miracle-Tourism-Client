@@ -23,7 +23,7 @@ const Banner = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100 banner"
-                                src="https://images.unsplash.com/photo-1491555103944-7c647fd857e6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dG91cmlzbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                src="https://akashbariholidays.com/resources/akasbari_holidays_tour_packages/package_52/pattaya.jpg"
                                 alt="First slide"
                             />
                             <Carousel.Caption>
@@ -33,23 +33,23 @@ const Banner = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100 banner"
-                                src="https://images.unsplash.com/photo-1618939552738-000685e6b199?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fHRvdXJpc218ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                src="https://akashbariholidays.com/resources/akasbari_holidays_tour_packages/package_68/santosa.jpg"
                                 alt="Second slide"
                             />
 
                             <Carousel.Caption>
-                                <h3 className='text-warning bg-primary'>Short Time Confirmation</h3>
+                                <h3 className='text-warning bg-primary'>No hidden charge</h3>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
                                 className="d-block w-100 banner"
-                                src="https://images.unsplash.com/photo-1536698658763-878a02695d1c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8dG91cmlzbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                                src="https://akashbariholidays.com/resources/akasbari_holidays_tour_packages/package_15/umrah%20tour%20package.jpg"
                                 alt="Third slide"
                             />
 
                             <Carousel.Caption>
-                                <h3 className='text-warning bg-primary'>Best Experts</h3>
+                                <h3 className='text-warning bg-primary'>Safest Umrah Package</h3>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
