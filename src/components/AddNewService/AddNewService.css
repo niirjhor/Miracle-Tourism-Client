@@ -1,0 +1,14 @@
+.Add-Booking form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Add-Booking form input{
+    width: 50%;
+    margin-bottom: 10px;
+}
+.Add-Booking form  textarea{
+    width: 50%;
+    margin-bottom: 10px;
+}
