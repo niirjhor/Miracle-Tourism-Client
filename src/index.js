@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<script src="https://kit.fontawesome.com/15d783e099.js" crossorigin="anonymous"></script>
 
 ReactDOM.render(
   <React.StrictMode>

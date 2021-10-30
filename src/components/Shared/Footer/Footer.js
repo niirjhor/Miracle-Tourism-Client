@@ -1,57 +1,51 @@
 import React from 'react';
+import './Footer.css'
 
 const Footer = () => {
     return (
         <div>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Untitled</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
-            <link rel="stylesheet" href="assets/css/style.css">
+            <footer className="site-footer">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12 col-md-6">
+                            <h6>About</h6>
+                            <p className="text-justify">MiracleTourism.com <i>is a great tour and travel </i> management company to look after you in your travels and journeys.We have more than 50 offices around the world to serve the people.Do enjoy and be safe.</p>
+                        </div>
 
-                <body>
-                    <div class="footer-clean">
-                        <footer>
-                            <div class="container">
-                                <div class="row justify-content-center">
-                                    <div class="col-sm-4 col-md-3 item">
-                                        <h3>Services</h3>
-                                        <ul>
-                                            <li><a href="#">Web design</a></li>
-                                            <li><a href="#">Development</a></li>
-                                            <li><a href="#">Hosting</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-4 col-md-3 item">
-                                        <h3>About</h3>
-                                        <ul>
-                                            <li><a href="#">Company</a></li>
-                                            <li><a href="#">Team</a></li>
-                                            <li><a href="#">Legacy</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-4 col-md-3 item">
-                                        <h3>Careers</h3>
-                                        <ul>
-                                            <li><a href="#">Job openings</a></li>
-                                            <li><a href="#">Employee success</a></li>
-                                            <li><a href="#">Benefits</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
-                                        <p class="copyright">Company Name © 2018</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
+                        <div className="col-xs-6 col-md-3">
+                            <h6>Categories</h6>
+                            <ul className="footer-links">
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com/">Travel</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Visa</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Tour Guide</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Transport</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Mobile App</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Career</a></li>
+                            </ul>
+                        </div>
+
+                        <div className="col-xs-6 col-md-3">
+                            <h6>Quick Links</h6>
+                            <ul className="footer-links">
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">About Us</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Contact Us</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Contribute</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Privacy Policy</a></li>
+                                <li><a target="_blank" rel="noreferrer" href="http://www.miracletourstravel.com">Sitemap</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-                </body>
-
-
-
-            </link>
+                    <hr />
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-8 col-sm-6 col-xs-12">
+                            <p className="copyright-text text-center">Copyright &copy; 2017 All Rights Reserved by Miracle Tourism Ltd.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 };
