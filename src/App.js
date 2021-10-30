@@ -18,6 +18,7 @@ import Header from './components/Shared/Header/Header/Header';
 import AuthProvider from './components/context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyOrders from './components/MyOrders/MyOrders/MyOrders';
+import Footer from './components/Shared/Footer/Footer';
 
 function App() {
   return (

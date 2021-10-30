@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 
 const ManageAllOrders = () => {
 
@@ -36,12 +36,47 @@ const ManageAllOrders = () => {
         }
     }
 
-    
+    //Approval Handle Section
+
+    const handleApproval = order => {
+        const proceed = window.confirm("Are you sure to approve the Order?")
+        if (proceed) {
+            order.status = "Approved"
+            const url = `http://localhost:5000/bookingConfirmations/${order._id}`
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(order)
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    alert('Order is Approved')
+                    const remaining = orders.map(matchedOrder => {
+                        if (matchedOrder._id === orders._id) {
+                            return order
+                        }
+                        return matchedOrder;
+
+                    })
+
+                    setOrders(remaining);
+
+                })
+            return handleApproval;
+
+        }
+
+
+    }
+
 
 
     return (
         <div>
-            <Table striped bordered hover>
+            <Table responsive="sm" striped bordered hover>
                 <thead>
                     <tr>
                         <th>Serial</th>
@@ -50,9 +85,9 @@ const ManageAllOrders = () => {
                         <th>User Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
+                        <th>Delete Order</th>
                         <th>Action</th>
-
-                        <th>Status</th>
+                        <th>Order Status</th>
                     </tr>
                 </thead>
                 {orders?.map((order, index) => (
@@ -66,10 +101,14 @@ const ManageAllOrders = () => {
                             <td>
                                 <button onClick={() => handleDelete(order._id)} className="btn bg-warning p-2">Delete</button>
                             </td>
-
                             <td>
-                                <button className="btn bg-warning p-2">Pending</button>
+
+                                <button onClick={() => handleApproval(order)} className="btn bg-warning p-2">Approve</button>
                             </td>
+                            <td>
+                                <button className="btn btn-warning" >{order.status}</button>
+                            </td>
+
                         </tr>
                     </tbody>
                 ))}

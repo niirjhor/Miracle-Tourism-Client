@@ -1,6 +1,8 @@
 import React from 'react';
+import MobileApp from '../../MobileApp/MobileApp';
 import Banner from '../Banner/Banner';
-import ClientsReviews from '../ClientsReviews/ClientsReviews';
+import BestHotels from '../BestHotels/BestHotels';
+
 import MainOffers from '../MainOffer/MainOffers';
 
 const Home = () => {
@@ -8,7 +10,9 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <MainOffers></MainOffers>
-            <ClientsReviews></ClientsReviews>
+            <BestHotels></BestHotels>
+            <MobileApp></MobileApp>
+
         </div>
     );
 };

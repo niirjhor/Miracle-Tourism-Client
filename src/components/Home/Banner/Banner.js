@@ -27,7 +27,7 @@ const Banner = () => {
                                 alt="First slide"
                             />
                             <Carousel.Caption>
-                                <h3 className='text-warning bg-primary'>Minimum Cost</h3>
+                                <h3 className='text-warning'>Minimum Cost</h3>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -38,7 +38,7 @@ const Banner = () => {
                             />
 
                             <Carousel.Caption>
-                                <h3 className='text-warning bg-primary'>No hidden charge</h3>
+                                <h3 className='text-warning'>No hidden charge</h3>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
@@ -49,7 +49,7 @@ const Banner = () => {
                             />
 
                             <Carousel.Caption>
-                                <h3 className='text-warning bg-primary'>Safest Umrah Package</h3>
+                                <h3 className='text-warning'>Safest Umrah Package</h3>
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>

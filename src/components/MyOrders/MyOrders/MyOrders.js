@@ -39,7 +39,7 @@ const MyOrders = () => {
     }
 
 
-    const matchedData = orders.filter(order => order.email === user.email)
+    const matchedData = orders.filter(order => order?.email === user?.email)
 
 
 
