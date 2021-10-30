@@ -17,20 +17,27 @@ const MyOrders = () => {
 
     //handle Delete
     const handleDelete = id => {
-        const url = `http://localhost:5000/bookingConfirmations/${id}`
-        fetch(url, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('Are you sure to cancel the booking?')
-                    const remaining = orders.filter(order => order._id !== id);
-                    setOrders(remaining);
-                }
+        const proceed = window.confirm("Are you sure to cancel the booking?")
+        if (proceed) {
+            const url = `http://localhost:5000/bookingConfirmations/${id}`;
+            fetch(url, {
+                method: "DELETE"
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('Booking has been cancelled')
+                        const remaining = orders.filter(order => order._id !== id);
+                        setOrders(remaining);
+                    }
+                });
+        }
+        return {
+            handleDelete
+        }
     }
+
 
     const matchedData = orders.filter(order => order.email === user.email)
 
@@ -71,7 +78,7 @@ const MyOrders = () => {
                                                                 <button className='btn btn-warning' onClick={() => handleDelete(order._id)}>Cancel</button>
                                                             </td>
                                                             <td>
-                                                                <button className='btn btn-warning' >Pending</button>
+                                                                <button className='btn btn-warning' >{order.status}</button>
                                                             </td>
                                                         </tr>
 

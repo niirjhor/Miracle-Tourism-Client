@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { useHistory, useLocation, useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './Orderplaced.css'
+
 
 
 const OrdersPlaced = () => {
@@ -44,12 +46,14 @@ const OrdersPlaced = () => {
 
             <h2 className='fw-bold text-warning'>Confirm Tour Package</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("name ", { required: true, maxLength: 50 })} placeholder="Name of the orderer" value={user.displayName} />
-
+                {user.displayName &&
+                    <input readOnly={true}{...register("name", { required: true, maxLength: 50 })} value={user.displayName} />
+                }
                 <br />
                 <input {...register("email", { required: true, maxLength: 50 })} placeholder="Email" value={user.email} />
 
                 <br />
+                <input className="pending" {...register("status", { required: true, maxLength: 50 })} placeholder="Status" value="Pending" />
 
                 {bookings.price && <input readOnly={true} {...register("price")} defaultValue={bookings.price} />}
                 <br />

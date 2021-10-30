@@ -14,20 +14,29 @@ const ManageAllOrders = () => {
 
     //handle Delete
     const handleDelete = id => {
-        const url = `http://localhost:5000/bookingConfirmations/${id}`
-        fetch(url, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount) {
-                    alert('Do you want to delete the user?')
-                    const remaining = orders.filter(order => order._id !== id);
-                    setOrders(remaining);
-                }
+        const proceed = window.confirm("Are you sure to delete the user?")
+        if (proceed) {
+            const url = `http://localhost:5000/bookingConfirmations/${id}`
+            fetch(url, {
+                method: "DELETE"
             })
+
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('User is deleted Successfully')
+                        const remaining = orders.filter(order => order._id !== id);
+                        setOrders(remaining);
+                    }
+                });
+        }
+        return {
+            handleDelete
+        }
     }
+
+    
 
 
     return (
@@ -51,7 +60,7 @@ const ManageAllOrders = () => {
                         <tr>
                             <td>{index + 1}</td>
                             <td>{order?.tourName}</td>
-                            <td>{order?.displayName}</td>
+                            <td>{order?.name}</td>
                             <td>{order?.email}</td>
                             <td>{order?.phoneNumber}</td>
                             <td>
@@ -68,5 +77,6 @@ const ManageAllOrders = () => {
         </div>
     );
 };
+
 
 export default ManageAllOrders;

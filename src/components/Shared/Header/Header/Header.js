@@ -25,15 +25,6 @@ const Header = () => {
                                 Home
                             </NavLink>
                             <NavLink className='navlists'
-                                to="/orderplaced"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "white"
-                                }}
-                            >
-                                Orders placed
-                            </NavLink>
-                            <NavLink className='navlists'
                                 to="/myorders"
                                 activeStyle={{
                                     fontWeight: "bold",
