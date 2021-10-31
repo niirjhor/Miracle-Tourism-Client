@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Modal, Button, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import './AddNewService.css'
+import { useHistory } from 'react-router';
 
 
 
@@ -10,12 +11,16 @@ const AddNewService = () => {
 
     const { register, handleSubmit, reset } = useForm();
 
+    const history = useHistory();
+    const redirect_uri = '/home'
+
     const onSubmit = data => {
         console.log(data);
         axios.post('https://blooming-mountain-71110.herokuapp.com/packages', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Packages added successfully');
+                    history.push(redirect_uri);
                     reset();
                 }
             })
@@ -27,16 +32,16 @@ const AddNewService = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
 
-                <input {...register("tourName", { required: true, maxLength: 50 })} placeholder="Tour Name" />
+                <input {...register("tourName", { required: true, maxLength: 30 })} placeholder="Tour Name" />
 
                 <br />
-                <input {...register("offer", { required: true, maxLength: 100 })} placeholder="Offer" />
+                <input {...register("offer", { required: true, maxLength: 20 })} placeholder="Offer" />
 
                 <br />
-                <input {...register("duraion", { required: true, maxLength: 100 })} placeholder="Duration" />
+                <input {...register("duraion", { required: true, maxLength: 20 })} placeholder="Duration" />
 
                 <br />
-                <input type='number' {...register("duraion", { required: true, maxLength: 100 })} placeholder="Package Price" />
+                <input type='number' {...register("duraion", { required: true, maxLength: 20 })} placeholder="Package Price" />
 
                 <br />
 
@@ -48,6 +53,7 @@ const AddNewService = () => {
 
                 <input {...register("img")} placeholder="image url" />
                 <br />
+
                 <input className='btn btn-warning' type="submit" />
             </form>
 
