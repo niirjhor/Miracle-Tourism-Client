@@ -22,7 +22,7 @@ import Footer from './components/Shared/Footer/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-light">
       <AuthProvider>
         <Router>
           <Header></Header>

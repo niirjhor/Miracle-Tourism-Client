@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Col, Row, Table } from 'react-bootstrap';
+import "./ManageOrders.css"
 
 const ManageAllOrders = () => {
 
@@ -75,44 +76,48 @@ const ManageAllOrders = () => {
 
 
     return (
-        <div>
-            <Table responsive="sm">
-                <thead>
-                    <tr>
-                        <th>Serial</th>
+        <div className="container table-responsive">
+            <Row>
+                <Col>
+                    <Table responsive>
+                        <thead>
+                            <tr>
+                                <th>Serial</th>
+                                <th>Booked Package</th>
+                                <th>User Name</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Delete Order</th>
+                                <th>Action</th>
+                                <th>Order Status</th>
+                            </tr>
+                        </thead>
+                        {orders?.map((order, index) => (
+                            <tbody>
+                                <tr>
+                                    <td>{index + 1}</td>
+                                    <td>{order?.tourName}</td>
+                                    <td>{order?.name}</td>
+                                    <td>{order?.email}</td>
+                                    <td>{order?.phoneNumber}</td>
+                                    <td>
+                                        <button onClick={() => handleDelete(order._id)} className="btn bg-warning p-2">Delete</button>
+                                    </td>
+                                    <td>
+                                        {order?.status === "Approved" ?
+                                            <button className="btn bg-info text-muted">Approved</button> :
+                                            <button onClick={() => handleApproval(order)} className="btn bg-warning p-2">Approve</button>}
+                                    </td>
+                                    <td>
+                                        <button className="btn btn-warning" >{order.status}</button>
+                                    </td>
 
-                        <th>Booked Package</th>
-                        <th>User Name</th>
-                        <th>Email</th>
-                        <th>Phone Number</th>
-                        <th>Delete Order</th>
-                        <th>Action</th>
-                        <th>Order Status</th>
-                    </tr>
-                </thead>
-                {orders?.map((order, index) => (
-                    <tbody>
-                        <tr>
-                            <td>{index + 1}</td>
-                            <td>{order?.tourName}</td>
-                            <td>{order?.name}</td>
-                            <td>{order?.email}</td>
-                            <td>{order?.phoneNumber}</td>
-                            <td>
-                                <button onClick={() => handleDelete(order._id)} className="btn bg-warning p-2">Delete</button>
-                            </td>
-                            <td>
-
-                                <button onClick={() => handleApproval(order)} className="btn bg-warning p-2">Approve</button>
-                            </td>
-                            <td>
-                                <button className="btn btn-warning" >{order.status}</button>
-                            </td>
-
-                        </tr>
-                    </tbody>
-                ))}
-            </Table>
+                                </tr>
+                            </tbody>
+                        ))}
+                    </Table>
+                </Col>
+            </Row>
 
         </div>
     );
