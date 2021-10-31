@@ -20,7 +20,7 @@ const OrdersPlaced = () => {
     const [bookings, setBookings] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/packages/${orderplacedId}`)
+        fetch(`https://blooming-mountain-71110.herokuapp.com/packages/${orderplacedId}`)
             .then(res => res.json())
             .then(data => setBookings(data))
         // 
@@ -29,7 +29,7 @@ const OrdersPlaced = () => {
 
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/bookingConfirmations', data)
+        axios.post('https://blooming-mountain-71110.herokuapp.com/bookingConfirmations', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Booking Successfully Done');

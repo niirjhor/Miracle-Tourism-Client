@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className='col-lg-6 col-sm-1'>
                     <div className="pt-5">
                         <h1><span className="Skip_color">Don't </span>Worry<br />
-                            About the Cost</h1>
+                            About the<span className="Skip_color"> Cost</span></h1>
                         <br />
                         <br />
                         <h2>We are there for your  <span className="text-primary">safe travels</span> around the World!</h2><br />

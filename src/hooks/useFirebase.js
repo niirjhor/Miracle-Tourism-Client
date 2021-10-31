@@ -35,21 +35,22 @@ const useFirbase = () => {
         [])
 
     const logOut = () => {
-        setIsLoading(true);
+
         signOut(auth)
             .then(() => {
                 // Sign-out successful.
             }).catch((error) => {
                 // An error happened.
             });
-
+        setIsLoading(true);
     }
 
     return {
         signInUsingGoogle,
         user,
         logOut,
-        setIsLoading
+        setIsLoading,
+        isLoading
 
     }
 }

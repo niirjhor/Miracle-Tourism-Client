@@ -15,6 +15,8 @@ const MobileApp = () => {
                         </Card>
                     </Col>
                     <Col>
+                        <br />
+                        <br />
                         <h1 className='text-success'>Have you tried our mobile <span className="text-primary fw-bold">App?</span></h1>
                         <h2 className='text-secondary'>Go and <span className="text-danger fw-bold">Download it</span>  to get all the exclusive Offers </h2>
                         <ListGroup>

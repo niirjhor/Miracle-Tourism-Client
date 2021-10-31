@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, Table } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import './MyOrders.css'
 
@@ -10,7 +10,7 @@ const MyOrders = () => {
 
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/bookingConfirmations')
+        fetch('https://blooming-mountain-71110.herokuapp.com/bookingConfirmations')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -19,7 +19,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure to cancel the booking?")
         if (proceed) {
-            const url = `http://localhost:5000/bookingConfirmations/${id}`;
+            const url = `https://blooming-mountain-71110.herokuapp.com/bookingConfirmations/${id}`;
             fetch(url, {
                 method: "DELETE"
             })
@@ -45,7 +45,7 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h3 class="card-title text-info fw-bold">My Placed Orders </h3>
+            <h3 className="card-title text-info fw-bold">My Placed Orders </h3>
 
 
             <Row>
@@ -57,7 +57,7 @@ const MyOrders = () => {
                                     <div className='card-body'>
                                         <div className='col-lg-12 col-sm-1 grid-margin stretch-card'>
                                             <div className='card-body'>
-                                                <table class="table">
+                                                <Table className="table responsive">
                                                     <thead>
                                                         <tr>
                                                             <th>Package Name</th>
@@ -83,7 +83,7 @@ const MyOrders = () => {
                                                         </tr>
 
                                                     </tbody>
-                                                </table>
+                                                </Table>
 
                                             </div>
                                         </div>

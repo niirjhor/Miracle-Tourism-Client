@@ -5,7 +5,7 @@ import BestHotel from '../BestHotel/BestHotel';
 const BestHotels = () => {
     const [hotelPackages, setHotelPackages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/packages2')
+        fetch('https://blooming-mountain-71110.herokuapp.com/packages2')
             .then(res => res.json())
             .then(data => setHotelPackages(data))
     }, [])
