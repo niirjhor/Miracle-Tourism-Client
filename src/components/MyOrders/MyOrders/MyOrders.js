@@ -45,73 +45,55 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h3 className="card-title text-info fw-bold">My Placed Orders </h3>
+            <div className="container">
+
+                <h1 className="m-5 p-5">MY ORDERS</h1>
+                <Table responsive className="mb-5">
+                    <thead>
+                        <tr className="bg-dark text-white">
+                            <th>Destination</th>
+
+                            <th>Full Name</th>
+
+                            <th>Email</th>
+
+                            <th>Address</th>
+                            <th>Phone Number</th>
 
 
-            <Row>
-                <Col>
-                    {
-                        matchedData.map(order => <div key={order._id}>
-                            <div className='page-container'>
-                                <div className='row container d-flex justify-content-center'>
-                                    <div className='card-body'>
-                                        <div className='col-lg-12 col-sm-1 grid-margin stretch-card'>
-                                            <div className='card-body'>
-                                                <Table className="table responsive">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Package Name</th>
-                                                            <th>Email</th>
-                                                            <th>Phone Number</th>
-                                                            <th>Package Cost</th>
-                                                            <th>Delete</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>{order.tourName}</td>
-                                                            <td>{order.email}</td>
-                                                            <td>{order.phoneNumber}</td>
-                                                            <td>{order.price}</td>
-                                                            <td>
-                                                                <button className='btn btn-warning' onClick={() => handleDelete(order._id)}>Cancel</button>
-                                                            </td>
-                                                            <td>
-                                                                <button className='btn btn-warning' >{order.status}</button>
-                                                            </td>
-                                                        </tr>
+                            <th>Price</th>
 
-                                                    </tbody>
-                                                </Table>
+                            <th>Order Status</th>
 
-                                            </div>
-                                        </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            matchedData.map(order =>
+                                <tr>
+                                    <td>{order?.tourName} </td>
 
-                                    </div>
+                                    <td>{order?.name} </td>
 
-                                </div>
-                            </div>
+                                    <td>{order?.email} </td>
 
+                                    <td>{order?.Address} </td>
+                                    <td>{order?.phoneNumber} </td>
 
+                                    <td>{order?.price} </td>
 
-                        </div>)
-                    }
-                </Col>
-                <Col>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                                    <td className="fw-bold">{order.status} </td>
 
-                    <h2 className='total-orders'>Total Orders:{matchedData.length}</h2>
-                </Col>
-            </Row>
+                                    <button className="bg-danger text-white" onClick={() => handleDelete(order._id)}>Cancel</button>
+                                </tr>
+                            )}
+                    </tbody>
+                </Table>
+                <div className="m-5">
+                    <h4 >
+                        Total Orders ={matchedData.length}
+                    </h4></div>
+            </div>
         </div>
     );
 };

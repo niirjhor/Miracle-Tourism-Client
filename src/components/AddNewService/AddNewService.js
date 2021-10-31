@@ -12,7 +12,7 @@ const AddNewService = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('https://blooming-mountain-71110.herokuapp.com//packages', data)
+        axios.post('https://blooming-mountain-71110.herokuapp.com/packages', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Packages added successfully');
