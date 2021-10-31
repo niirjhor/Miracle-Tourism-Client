@@ -63,7 +63,7 @@ const OrdersPlaced = () => {
                 <br />
                 <input type='text' {...register("Address", { required: true, maxLength: 50 })} placeholder="Full Address" />
                 <br />
-                <input type='number' {...register("phoneNumber", { required: true, maxLength: 50 })} placeholder="Phone Number" />
+                <input type='number' {...register("phoneNumber", { required: true, maxLength: 13 })} placeholder="Phone Number" />
                 <br />
                 <input className='btn btn-warning' type="submit" />
             </form>
