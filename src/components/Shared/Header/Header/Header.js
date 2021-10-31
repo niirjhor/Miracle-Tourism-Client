@@ -26,33 +26,38 @@ const Header = () => {
                             >
                                 Home
                             </NavLink>
-                            <NavLink className='navlists'
-                                to="/myorders"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "white"
-                                }}
-                            >
-                                My Orders
-                            </NavLink>
-                            <NavLink className='navlists'
-                                to="/manageallorders"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "white"
-                                }}
-                            >
-                                Manage All Orders
-                            </NavLink>
-                            <NavLink className='navlists'
-                                to="/addnewservice"
-                                activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "white"
-                                }}
-                            >
-                                Add New Service
-                            </NavLink>
+                            {user?.email &&
+                                <NavLink className='navlists'
+                                    to="/myorders"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "white"
+                                    }}
+                                >
+                                    My Orders
+                                </NavLink>
+                            }
+                            {user?.email &&
+                                <NavLink className='navlists'
+                                    to="/manageallorders"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "white"
+                                    }}
+                                >
+                                    Manage All Orders
+                                </NavLink>}
+                            {user?.email &&
+                                <NavLink className='navlists'
+                                    to="/addnewservice"
+                                    activeStyle={{
+                                        fontWeight: "bold",
+                                        color: "white"
+                                    }}
+                                >
+                                    Add New Service
+                                </NavLink>
+                            }
 
                             {user?.email ?
                                 <Button className='ms-5' onClick={logOut} variant="light">Logout</Button> :

@@ -105,7 +105,7 @@ const ManageAllOrders = () => {
                                     </td>
                                     <td>
                                         {order?.status === "Approved" ?
-                                            <button className="btn bg-info text-muted">Approved</button> :
+                                            <span> Approved</span> :
                                             <button onClick={() => handleApproval(order)} className="btn bg-warning p-2">Approve</button>}
                                     </td>
                                     <td>
